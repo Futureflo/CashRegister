@@ -14,5 +14,16 @@
 		id="Textfeld1" class="javafx.scene.control.TextField">
 </bean>
 
+	<bean id="Beer1" class="model.Drink">
+		<property name="name" value="Beer"/>
+		<property name="price" value="2.50"/>
+		<property name="volume" value="0.5"/>
+	</bean>
+	
+	<bean id="Currywurst1" class="model.Food">
+		<property name="name" value="Currywurst"/>
+		<property name="price" value="4"/>
+	</bean>
+
 
 </beans>
