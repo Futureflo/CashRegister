@@ -10,7 +10,9 @@
 	<bean id="TestBorderPane" class="application.TestBorderPane">
 	</bean>
 	
-	<bean id="Rechner1" class="rechenmodul.Rechner" scope="singleton"/>
+	<bean id="Rechner1" class="rechenmodul.Rechner" scope="singleton"/><bean
+		id="Textfeld1" class="javafx.scene.control.TextField">
+</bean>
 
-	
+
 </beans>
