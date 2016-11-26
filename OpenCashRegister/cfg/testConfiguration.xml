@@ -24,6 +24,13 @@
 		<property name="name" value="Currywurst"/>
 		<property name="price" value="4"/>
 	</bean>
+	
+	<bean id="Order" class="model.Order">
+		<property name="id" value="1"/>
+		<property name="products">
+			<ref bean="Beer1"/>
+		</property>
+	</bean>
 
 
 </beans>
