@@ -12,7 +12,7 @@
 	
 	<bean id="Rechner1" class="rechenmodul.Rechner" scope="singleton"/><bean
 		id="Textfeld1" class="javafx.scene.control.TextField">
-</bean>
+	</bean>
 
 	<bean id="Beer1" class="model.Drink">
 		<property name="name" value="Beer"/>
@@ -33,6 +33,13 @@
 				<ref bean="Currywurst1"/>
 			</set>
 		</property>
+	</bean>
+	
+	<bean id="Orderposition1" class="model.Orderposition">
+		<property name="product">
+			<ref bean="Currywurst1"/>
+		</property>
+		<property name="count" value="2"/>
 	</bean>
 
 
