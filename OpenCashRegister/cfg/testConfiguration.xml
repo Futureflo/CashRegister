@@ -28,10 +28,17 @@
 	<bean id="Order" class="model.Order">
 		<property name="id" value="1"/>
 		<property name="products">
+<<<<<<< HEAD
+		<list>
+			<ref bean="Beer1"/>
+			<ref bean="Currywurst1"/>
+		</list>
+=======
 			<set>
 				<ref bean="Beer1"/>
 				<ref bean="Currywurst1"/>
 			</set>
+>>>>>>> branch 'master' of https://github.com/Futureflo/CashRegister.git
 		</property>
 	</bean>
 	
