@@ -1,18 +1,30 @@
 package model;
 
-import java.util.Set;
+import java.util.List;
 
 public class Order {
 
-	Set<Product> products;
+	List<Product> products;
 
 	int id;
 
-	public Set<Product> getProducts() {
+	public List<Product> addProduct(Product product) {
+		products.add(product);
+
 		return products;
 	}
 
-	public void setProducts(Set<Product> products) {
+	public List<Product> removeProduct(Product product) {
+		products.remove(product);
+
+		return products;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 

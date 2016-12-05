@@ -3,7 +3,7 @@ package tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -41,7 +41,7 @@ public class OrderTests {
 	// Geht noch nicht. Tipp: testConfiguration anschauen
 	@Test
 	public void testGetProducts() {
-		Set<Product> products = order.getProducts();
+		List<Product> products = order.getProducts();
 
 		assertEquals(true, products.contains(beer));
 
@@ -58,7 +58,7 @@ public class OrderTests {
 
 		order.addProduct(cola);
 
-		Set<Product> products = order.getProducts();
+		List<Product> products = order.getProducts();
 
 		assertEquals(true, products.contains(cola));
 	}
@@ -70,7 +70,7 @@ public class OrderTests {
 
 		order.addProduct(cola);
 
-		Set<Product> products = order.getProducts();
+		List<Product> products = order.getProducts();
 
 		assertEquals(true, products.contains(cola));
 
@@ -78,7 +78,7 @@ public class OrderTests {
 
 		order.removeProduct(cola);
 
-		Set<Product> products = order.getProducts();
+		products = order.getProducts();
 
 		assertEquals(false, products.contains(cola));
 
