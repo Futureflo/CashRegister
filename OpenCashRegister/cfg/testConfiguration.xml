@@ -28,7 +28,10 @@
 	<bean id="Order" class="model.Order">
 		<property name="id" value="1"/>
 		<property name="products">
+		<list>
 			<ref bean="Beer1"/>
+			<ref bean="Currywurst1"/>
+		</list>
 		</property>
 	</bean>
 
