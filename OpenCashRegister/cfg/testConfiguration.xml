@@ -7,13 +7,6 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
     http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd">
 	
-	<bean id="TestBorderPane" class="application.TestBorderPane">
-	</bean>
-	
-	<bean id="Rechner1" class="rechenmodul.Rechner" scope="singleton"/><bean
-		id="Textfeld1" class="javafx.scene.control.TextField">
-	</bean>
-
 	<bean id="Beer1" class="model.Drink">
 		<property name="name" value="Beer"/>
 		<property name="price" value="2.50"/>
@@ -44,5 +37,14 @@
 		<property name="count" value="2"/>
 	</bean>
 
+	<bean id="MainView" class="view.MainView" init-method="init">
+		<property name="menuBarTop">
+			<ref bean="MenuBarTop"/>
+		</property>
+	</bean>
+	
+	<bean id="MenuBarTop" class="view.MenuBarTop" init-method="init">
+	
+	</bean>
 
 </beans>
