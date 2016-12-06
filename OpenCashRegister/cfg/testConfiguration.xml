@@ -41,10 +41,40 @@
 		<property name="menuBarTop">
 			<ref bean="MenuBarTop"/>
 		</property>
+		<property name="centerPaneSeparated">
+			<ref bean="CenterPaneSeparated"/>
+		</property>
+		
 	</bean>
 	
 	<bean id="MenuBarTop" class="view.MenuBarTop" init-method="init">
 	
 	</bean>
+	
+	<bean id="CenterPaneSeparated" class="view.CenterPaneSeparated" init-method="init">
+		<property name="productPane">
+			<ref bean="ProductPane"/>
+		</property>	
+		<property name="pricePane">
+			<ref bean="PricePane"/>
+		</property>
+	</bean>
 
+	<bean id="ProductPane" class="view.ProductPane" init-method="init">
+	</bean>
+	
+	<bean id="PricePane" class="view.PricePane" init-method="init">
+		<property name="numberPane">
+			<ref bean="NumberPane"/>
+		</property>
+		<property name="tablePane">
+			<ref bean="TablePane"/>
+		</property>
+	</bean>
+	
+	<bean id="NumberPane" class="view.NumberPane" init-method="init">
+	</bean>
+	
+	<bean id="TablePane" class="view.TablePane"	init-method="init">
+	</bean>
 </beans>

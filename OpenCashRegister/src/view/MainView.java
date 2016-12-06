@@ -6,9 +6,11 @@ import javafx.scene.layout.BorderPane;
 public class MainView extends BorderPane {
 
 	MenuBar menuBarTop;
+	CenterPaneSeparated centerPaneSeparated;
 
 	public void init() {
 		this.setTop(menuBarTop);
+		this.setCenter(centerPaneSeparated);
 	}
 
 	public MenuBar getMenuBarTop() {
@@ -17,6 +19,14 @@ public class MainView extends BorderPane {
 
 	public void setMenuBarTop(MenuBar menuBarTop) {
 		this.menuBarTop = menuBarTop;
+	}
+
+	public CenterPaneSeparated getCenterPaneSeparated() {
+		return centerPaneSeparated;
+	}
+
+	public void setCenterPaneSeparated(CenterPaneSeparated centerPaneSeparated) {
+		this.centerPaneSeparated = centerPaneSeparated;
 	}
 
 }
