@@ -9,8 +9,12 @@ public class PricePane extends GridPane {
 
 	NumberPane numberPane;
 
+	SumPane sumPane;
+
 	public void init() {
-		this.add(numberPane, 0, 1);
+
+		this.add(sumPane, 0, 1);
+		this.add(numberPane, 0, 2);
 
 		GridPane.setHgrow(numberPane, Priority.ALWAYS);
 		GridPane.setVgrow(numberPane, Priority.ALWAYS);
@@ -35,6 +39,14 @@ public class PricePane extends GridPane {
 
 	public void setTablePane(TablePane tablePane) {
 		this.tablePane = tablePane;
+	}
+
+	public SumPane getSumPane() {
+		return sumPane;
+	}
+
+	public void setSumPane(SumPane sumPane) {
+		this.sumPane = sumPane;
 	}
 
 }

@@ -22,25 +22,33 @@ public class NumberPane extends GridPane {
 		Button button7 = new Button("7");
 		Button button8 = new Button("8");
 		Button button9 = new Button("9");
+		Button buttonStorno = new Button("Storno");
+		Button buttonEmpty1 = new Button("");
+		Button buttonEmpty2 = new Button("");
+		Button buttonEnter = new Button("Enter");
 
 		List<Button> buttonList = new ArrayList<Button>();
 		buttonList.add(button7);
 		buttonList.add(button8);
 		buttonList.add(button9);
+		buttonList.add(buttonStorno);
 		buttonList.add(button4);
 		buttonList.add(button5);
 		buttonList.add(button6);
+		buttonList.add(buttonEmpty1);
 		buttonList.add(button1);
 		buttonList.add(button2);
 		buttonList.add(button3);
+		buttonList.add(buttonEmpty2);
 		buttonList.add(buttonComma);
 		buttonList.add(button0);
 		buttonList.add(button00);
+		buttonList.add(buttonEnter);
 
 		int i = 0;
 
 		for (Button button : buttonList) {
-			this.add(button, i % 3, i / 3);
+			this.add(button, i % 4, i / 4);
 
 			GridPane.setHgrow(button, Priority.ALWAYS);
 			GridPane.setVgrow(button, Priority.ALWAYS);

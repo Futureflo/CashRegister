@@ -1,9 +1,9 @@
 package model;
 
-public abstract class Product {
+public class Product {
 
 	private String name;
-	
+
 	private float price;
 
 	public String getName() {
@@ -21,6 +21,5 @@ public abstract class Product {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	
-	
+
 }

@@ -60,7 +60,7 @@
 		</property>
 	</bean>
 
-	<bean id="ProductPane" class="view.ProductPane" init-method="init">
+	<bean id="ProductPane" class="view.ProductPane">
 	</bean>
 	
 	<bean id="PricePane" class="view.PricePane" init-method="init">
@@ -70,11 +70,30 @@
 		<property name="tablePane">
 			<ref bean="TablePane"/>
 		</property>
+		<property name="sumPane">
+			<ref bean="SumPane"/>
+		</property>
 	</bean>
 	
 	<bean id="NumberPane" class="view.NumberPane" init-method="init">
 	</bean>
 	
 	<bean id="TablePane" class="view.TablePane"	init-method="init">
+	</bean>
+	
+	<bean id="SumPane" class="view.SumPane" init-method="init">
+	</bean>
+	
+	<bean id="TxtLoader" class="loader.TxtLoader">
+		<property name="path" value="files/products.txt"/>
+	</bean>
+	
+	<bean id="ProductPaneController" class="controller.ProductPaneController" init-method="init">
+		<property name="productPane">
+			<ref bean="ProductPane"/>
+		</property>
+		<property name="txtLoader">
+			<ref bean="TxtLoader"/>
+		</property>
 	</bean>
 </beans>
