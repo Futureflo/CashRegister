@@ -1,2 +1,3 @@
 Bier 2.50
 Brezel 1.50
+Wasser 2.00

@@ -10,10 +10,8 @@ public class TablePaneController {
 
 	public void initModel(DatamodelOrders datamodel) {
 
-		if (this.datamodel != null) {
-			throw new IllegalStateException("Model can only be initialized once");
-		}
 		this.datamodel = datamodel;
+		tablePane.setData(this.datamodel.getOrderpositionList());
 
 	}
 

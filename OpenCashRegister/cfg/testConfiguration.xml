@@ -61,6 +61,9 @@
 	</bean>
 
 	<bean id="ProductPane" class="view.ProductPane">
+		<property name="listener">
+			<ref bean="ProductPaneListener"/>
+		</property>
 	</bean>
 	
 	<bean id="PricePane" class="view.PricePane" init-method="init">
@@ -96,4 +99,24 @@
 			<ref bean="TxtLoader"/>
 		</property>
 	</bean>
+	
+	<bean id="ProductPaneListener" class="view.ProductPaneListener">
+		<property name="model">
+			<ref bean="DatamodelOrders"/>
+		</property>
+	</bean>
+
+	<bean id="DatamodelOrders" class="model.DatamodelOrders">
+		<property name="controller">
+			<ref bean="TablePaneController"/>
+		</property>
+	</bean>	
+	
+	<bean id="TablePaneController" class="view.TablePaneController">
+		<property name="tablePane">
+			<ref bean="TablePane"/>
+		</property>
+		
+	</bean>
+	
 </beans>

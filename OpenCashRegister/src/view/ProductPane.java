@@ -10,12 +10,16 @@ public class ProductPane extends GridPane {
 
 	private ArrayList<Product> model;
 
+	private ProductPaneListener listener;
+
 	public void init() {
 
 		for (int i = 0; i < 25; i++) {
 			ProductButton button;
 			if (i < model.size()) {
 				button = new ProductButton(model.get(i));
+
+				button.setOnAction(e -> listener.handle(e));
 			} else {
 				button = new ProductButton("");
 			}
@@ -37,6 +41,14 @@ public class ProductPane extends GridPane {
 
 	public void setModel(ArrayList<Product> model) {
 		this.model = model;
+	}
+
+	public ProductPaneListener getListener() {
+		return listener;
+	}
+
+	public void setListener(ProductPaneListener listener) {
+		this.listener = listener;
 	}
 
 }
