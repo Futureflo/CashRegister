@@ -18,17 +18,25 @@ public class DatamodelOrders {
 
 	public ObservableList<Orderposition> addOrderposition(Product product) {
 
-		for (Orderposition orderposition : orderpositionList) {
-			if (orderposition.getProduct() == product) {
-				orderposition.setCount((orderposition.getCount() + 1));
-				break;
-			} else {
-				Orderposition orderPosition = new Orderposition();
-				orderposition.setProduct(product);
-				orderposition.setCount(1);
+		if (orderpositionList.size() > 0) {
+			for (Orderposition orderposition : orderpositionList) {
+				if (orderposition.getProduct().equals(product)) {
+					orderposition.setCount((orderposition.getCount() + 1));
+					break;
+				} else {
+					Orderposition orderPosition = new Orderposition();
+					orderPosition.setProduct(product);
+					orderPosition.setCount(1);
 
-				orderpositionList.add(orderposition);
+					orderpositionList.add(orderPosition);
+				}
 			}
+		} else {
+			Orderposition orderPosition = new Orderposition();
+			orderPosition.setProduct(product);
+			orderPosition.setCount(1);
+
+			orderpositionList.add(orderPosition);
 		}
 		controller.initModel(this);
 		return orderpositionList;

@@ -3,11 +3,12 @@ package view;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Orderposition;
 
 public class TablePane extends TableView<Orderposition> {
 
-	private ObservableList<Orderposition> data = null;
+	private ObservableList<Orderposition> data;
 
 	public void init() {
 
@@ -17,7 +18,7 @@ public class TablePane extends TableView<Orderposition> {
 		// productCol.setCellValueFactory(c -> new SimpleStringProperty("" +
 		// orderposition.getProduct().getName()));
 		TableColumn countCol = new TableColumn("Anzahl");
-		// countCol.setCellValueFactory(new PropertyValueFactory<>("count"));
+		countCol.setCellValueFactory(new PropertyValueFactory<>("count"));
 		TableColumn priceCol = new TableColumn("Preis");
 		// priceCol.setCellValueFactory(
 		// c -> new SimpleStringProperty("" +
@@ -25,7 +26,6 @@ public class TablePane extends TableView<Orderposition> {
 
 		this.getColumns().addAll(productCol, countCol, priceCol);
 
-		this.setItems(data);
 	}
 
 	public ObservableList<Orderposition> getData() {
@@ -34,6 +34,7 @@ public class TablePane extends TableView<Orderposition> {
 
 	public void setData(ObservableList<Orderposition> data) {
 		this.data = data;
+		this.setItems(data);
 	}
 
 }
