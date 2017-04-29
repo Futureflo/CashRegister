@@ -6,6 +6,10 @@ public class Orderposition {
 
 	int count;
 
+	float price;
+
+	String name;
+
 	public Product getProduct() {
 		return product;
 	}
@@ -20,6 +24,14 @@ public class Orderposition {
 
 	public void setCount(int count) {
 		this.count = count;
+	}
+
+	public String getName() {
+		return product.getName();
+	}
+
+	public float getPrice() {
+		return product.getPrice() * count;
 	}
 
 }
