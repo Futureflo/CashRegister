@@ -19,17 +19,22 @@ public class DatamodelOrders {
 	public ObservableList<Orderposition> addOrderposition(Product product) {
 
 		if (orderpositionList.size() > 0) {
+			boolean inList = false;
 			for (Orderposition orderposition : orderpositionList) {
+
 				if (orderposition.getProduct().equals(product)) {
 					orderposition.setCount((orderposition.getCount() + 1));
+					inList = true;
 					break;
-				} else {
-					Orderposition orderPosition = new Orderposition();
-					orderPosition.setProduct(product);
-					orderPosition.setCount(1);
-
-					orderpositionList.add(orderPosition);
 				}
+			}
+
+			if (!inList) {
+				Orderposition orderPosition = new Orderposition();
+				orderPosition.setProduct(product);
+				orderPosition.setCount(1);
+
+				orderpositionList.add(orderPosition);
 			}
 		} else {
 			Orderposition orderPosition = new Orderposition();

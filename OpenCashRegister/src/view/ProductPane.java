@@ -14,7 +14,7 @@ public class ProductPane extends GridPane {
 
 	public void init() {
 
-		for (int i = 0; i < 25; i++) {
+		for (int i = 0; i < 15; i++) {
 			ProductButton button;
 			if (i < model.size()) {
 				button = new ProductButton(model.get(i));
@@ -31,7 +31,7 @@ public class ProductPane extends GridPane {
 			// + Wachstumsrechte
 			GridPane.setHgrow(button, Priority.ALWAYS);
 			GridPane.setVgrow(button, Priority.ALWAYS);
-			this.add(button, i % 5, i / 5);
+			this.add(button, i % 3, i / 3);
 		}
 	}
 

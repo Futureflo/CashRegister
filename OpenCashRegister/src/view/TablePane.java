@@ -1,7 +1,9 @@
+
 package view;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,14 +20,15 @@ public class TablePane extends TableView<Orderposition> {
 
 		this.setEditable(true);
 
-		// Product product = new Product();
-		// product.setName("Test");
-		// product.setPrice(2f);
-		//
-		// Orderposition order = new Orderposition();
-		// order.setProduct(product);
-		// order.setCount(2);
-		// data.add(order);
+		Product product = new Product();
+		product.setName("qe");
+		product.setPrice(2f);
+
+		Orderposition order = new Orderposition();
+		order.setProduct(product);
+		order.setCount(2);
+		data.add(order);
+
 		TableColumn<Orderposition, Product> productCol = new TableColumn<Orderposition, Product>("Produkt");
 		// productCol.setCellValueFactory(c -> new SimpleStringProperty("" +
 		// orderposition.getProduct().getName()));
@@ -34,20 +37,19 @@ public class TablePane extends TableView<Orderposition> {
 		productCol
 				.setCellFactory(new Callback<TableColumn<Orderposition, Product>, TableCell<Orderposition, Product>>() {
 
-					@Override
 					public TableCell<Orderposition, Product> call(TableColumn<Orderposition, Product> param) {
 
 						TableCell<Orderposition, Product> productCell = new TableCell<Orderposition, Product>() {
 
 							protected void updateItem(Product item, boolean empty) {
 								if (item != null) {
+									Label productLabel = new Label("Test");
+									setGraphic(productLabel);
 								}
 							}
 						};
-
 						return productCell;
 					}
-
 				});
 
 		TableColumn countCol = new TableColumn("Anzahl");
@@ -68,6 +70,7 @@ public class TablePane extends TableView<Orderposition> {
 	public void setData(ObservableList<Orderposition> data) {
 		this.data = data;
 		this.setItems(data);
+		this.refresh();
 	}
 
 }
